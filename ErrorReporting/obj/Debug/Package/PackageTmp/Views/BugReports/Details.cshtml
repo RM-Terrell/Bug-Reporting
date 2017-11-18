@@ -1,0 +1,19 @@
+﻿@model ErrorReporting.Models.BugReport
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Report Details</h2>
+<ul>
+    <li>@Model.Name</li>
+    <li>@Model.Severity</li>
+    <li>@Model.OperatingSystemId</li>
+    <li>@Model.Description</li>
+    <li>@Model.Reproduction</li>
+    <li>@Model.BugOccurrenceDate</li>
+    <li>@Model.SubmissionDate</li>
+    <li>@Model.BrowserId</li>
+    
+</ul>
+

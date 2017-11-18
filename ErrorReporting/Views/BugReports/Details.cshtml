@@ -1,0 +1,44 @@
+﻿@model ErrorReporting.Models.BugReport
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Report Details</h2>
+<ul>
+    <p>
+    @Html.Label("Name: ")
+    @Model.Name
+    </p>
+    <p>
+    @Html.Label("Severity: ")
+    @Model.Severity
+    </p>
+    <p>
+    @Html.Label("Operating System: ")
+    @Model.OperatingSystemId
+    </p>
+    <p> 
+    @Html.Label("Browser: ")
+    @Model.BrowserId
+    </p>
+    <p>
+    @Html.Label("Description: ")
+    @Model.Description
+    </p>
+    <p>
+    @Html.Label("Reproduction: ")
+    @Model.Reproduction
+    </p>
+    <p>
+    @Html.LabelFor(m => m.BugOccurrenceDate)
+    @Model.BugOccurrenceDate
+    </p>
+    <p>
+    @Html.LabelFor(m => m.SubmissionDate)
+    @Model.SubmissionDate
+    </p>
+    
+    
+</ul>
+
