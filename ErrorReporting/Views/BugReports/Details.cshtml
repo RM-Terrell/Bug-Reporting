@@ -16,11 +16,11 @@
     </p>
     <p>
     @Html.Label("Operating System: ")
-    @Model.OperatingSystemId
+    @Model.OperatingSystem.OperatingSystemName
     </p>
     <p> 
     @Html.Label("Browser: ")
-    @Model.BrowserId
+    @Model.Browser.BrowserName
     </p>
     <p>
     @Html.Label("Description: ")
@@ -38,6 +38,8 @@
     @Html.LabelFor(m => m.SubmissionDate)
     @Model.SubmissionDate
     </p>
+
+    
     
     
 </ul>

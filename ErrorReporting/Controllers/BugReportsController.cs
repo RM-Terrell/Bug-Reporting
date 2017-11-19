@@ -30,7 +30,13 @@ namespace ErrorReporting.Controllers
         public ActionResult Details(int id)
         {
             var report = _context.BugReport.SingleOrDefault(c => c.Id == id);
-            
+
+            var specificReportBrowser = _context.Browsers.SingleOrDefault(c => c.Id == id);
+            report.Browser = specificReportBrowser;
+
+            var specificReportOS = _context.OperatingSystems.SingleOrDefault(c => c.Id == id);
+            report.OperatingSystem = specificReportOS;
+
 
             if (report == null)
                 return HttpNotFound();
@@ -51,7 +57,7 @@ namespace ErrorReporting.Controllers
         {
             try
             {
-                // TODO: Add insert logic here
+                // Add insert logic here
 
                 return RedirectToAction("Index");
             }
@@ -73,7 +79,7 @@ namespace ErrorReporting.Controllers
         {
             try
             {
-                // TODO: Add update logic here
+                // Add update logic here
 
                 return RedirectToAction("Index");
             }
@@ -95,7 +101,7 @@ namespace ErrorReporting.Controllers
         {
             try
             {
-                // TODO: Add delete logic here
+                // Add delete logic here
 
                 return RedirectToAction("Index");
             }

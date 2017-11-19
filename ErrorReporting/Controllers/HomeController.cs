@@ -56,10 +56,10 @@ namespace ErrorReporting.Controllers
         private BugReport GenerateModel()
         {
             var model = new BugReport();
-            var listInitialOS = _context.OperatingSystems.ToList(); // Mysteries of C# typing
+            var listInitialOS = _context.OperatingSystems.ToList(); //TODO Assigment to get around a typing issue. Find more elegant solution?
             var listFinalOS = listInitialOS.Select(os => new OperatingSystems { OperatingSystemName = os.OperatingSystemName, Id = os.Id }).ToList();
 
-            var listInitialBrowser = _context.Browsers.ToList(); // More mysteries
+            var listInitialBrowser = _context.Browsers.ToList(); 
             var listFinalBrowser = listInitialBrowser.Select(br => new Browsers { BrowserName = br.BrowserName, Id = br.Id }).ToList();
 
             model.BrowserList = listFinalBrowser;
