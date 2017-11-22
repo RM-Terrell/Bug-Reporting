@@ -272,3 +272,5 @@ C:\Users\rterrell\Documents\web-projects\Bug-Reporting\ErrorReporting\obj\Debug\
 C:\Users\rterrell\Documents\web-projects\Bug-Reporting\ErrorReporting\obj\Debug\ErrorReporting.csproj.CoreCompileInputs.cache
 C:\Users\rterrell\Documents\web-projects\Bug-Reporting\ErrorReporting\obj\Debug\ErrorReporting.dll
 C:\Users\rterrell\Documents\web-projects\Bug-Reporting\ErrorReporting\obj\Debug\ErrorReporting.pdb
+C:\Users\rterrell\Documents\web-projects\Bug-Reporting\ErrorReporting\obj\Debug\ErrorReporting.Migrations.AddedReportStatus.resources
+C:\Users\rterrell\Documents\web-projects\Bug-Reporting\ErrorReporting\obj\Debug\ErrorReporting.Migrations.SeedingReportStatus.resources

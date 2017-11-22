@@ -242,6 +242,14 @@
     <Compile Include="Migrations\201711150227007_AddedSeverityRange.Designer.cs">
       <DependentUpon>201711150227007_AddedSeverityRange.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201711220129566_AddedReportStatus.cs" />
+    <Compile Include="Migrations\201711220129566_AddedReportStatus.Designer.cs">
+      <DependentUpon>201711220129566_AddedReportStatus.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201711220130345_SeedingReportStatus.cs" />
+    <Compile Include="Migrations\201711220130345_SeedingReportStatus.Designer.cs">
+      <DependentUpon>201711220130345_SeedingReportStatus.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Browsers.cs" />
@@ -249,6 +257,7 @@
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Models\OperatingSystems.cs" />
+    <Compile Include="Models\Status.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
   </ItemGroup>
@@ -595,6 +604,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201711150227007_AddedSeverityRange.resx">
       <DependentUpon>201711150227007_AddedSeverityRange.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201711220129566_AddedReportStatus.resx">
+      <DependentUpon>201711220129566_AddedReportStatus.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201711220130345_SeedingReportStatus.resx">
+      <DependentUpon>201711220130345_SeedingReportStatus.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
