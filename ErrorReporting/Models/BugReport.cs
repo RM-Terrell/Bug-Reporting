@@ -12,6 +12,7 @@ namespace ErrorReporting.Models
         public int Id { get; set; }
 
         [Required]
+        [Display(Name ="Submitter Name")]
         public string Name { get; set; }
 
         [Display(Name="Error Message (if given)")]
