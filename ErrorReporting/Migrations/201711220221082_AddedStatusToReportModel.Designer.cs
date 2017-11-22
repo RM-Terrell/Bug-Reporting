@@ -7,13 +7,13 @@ namespace ErrorReporting.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.2.0-61023")]
-    public sealed partial class SeedingSampleReport : IMigrationMetadata
+    public sealed partial class AddedStatusToReportModel : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(SeedingSampleReport));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(AddedStatusToReportModel));
         
         string IMigrationMetadata.Id
         {
-            get { return "201711132158000_SeedingSampleReport"; }
+            get { return "201711220221082_AddedStatusToReportModel"; }
         }
         
         string IMigrationMetadata.Source

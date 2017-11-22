@@ -23,6 +23,7 @@ namespace ErrorReporting.Models
         public DbSet<OperatingSystems> OperatingSystems { get; set; }
         public DbSet<BugReport> BugReport { get; set; }
         public DbSet<Browsers> Browsers { get; set; }
+        public DbSet<Status> Status { get; set; }
         public ApplicationDbContext()
             : base("DefaultConnection", throwIfV1Schema: false)
         {

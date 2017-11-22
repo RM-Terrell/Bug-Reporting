@@ -39,7 +39,7 @@ namespace ErrorReporting.Controllers
             }
             else
             {
-                _context.BugReport.Add(bugReport);
+                _context.BugReport.Add(bugReport);                
                 _context.SaveChanges();
 
                 return RedirectToAction("SubmissionSuccess", "Home");

@@ -53,6 +53,9 @@ namespace ErrorReporting.Models
         [Display(Name = "Date of Submission")]
         [Required]
         public DateTime SubmissionDate { get; set; }
+
+        public byte StatusId { get; set; }
         public Status Status { get; set; }
+
     }
 }

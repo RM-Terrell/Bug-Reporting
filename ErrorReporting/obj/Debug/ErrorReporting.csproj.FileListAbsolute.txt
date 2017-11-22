@@ -264,7 +264,6 @@ C:\Users\rterrell\Documents\web-projects\Bug-Reporting\ErrorReporting\obj\Debug\
 C:\Users\rterrell\Documents\web-projects\Bug-Reporting\ErrorReporting\obj\Debug\ErrorReporting.Migrations.InitialModel.resources
 C:\Users\rterrell\Documents\web-projects\Bug-Reporting\ErrorReporting\obj\Debug\ErrorReporting.Migrations.SeedingBrowsers.resources
 C:\Users\rterrell\Documents\web-projects\Bug-Reporting\ErrorReporting\obj\Debug\ErrorReporting.Migrations.SeedingOperatingSystems.resources
-C:\Users\rterrell\Documents\web-projects\Bug-Reporting\ErrorReporting\obj\Debug\ErrorReporting.Migrations.SeedingSampleReport.resources
 C:\Users\rterrell\Documents\web-projects\Bug-Reporting\ErrorReporting\obj\Debug\ErrorReporting.Migrations.AddedBugReportAnnotations.resources
 C:\Users\rterrell\Documents\web-projects\Bug-Reporting\ErrorReporting\obj\Debug\ErrorReporting.Migrations.AddedOccurrenceAndSubmissionDates.resources
 C:\Users\rterrell\Documents\web-projects\Bug-Reporting\ErrorReporting\obj\Debug\ErrorReporting.Migrations.AddedSeverityRange.resources
@@ -272,5 +271,6 @@ C:\Users\rterrell\Documents\web-projects\Bug-Reporting\ErrorReporting\obj\Debug\
 C:\Users\rterrell\Documents\web-projects\Bug-Reporting\ErrorReporting\obj\Debug\ErrorReporting.csproj.CoreCompileInputs.cache
 C:\Users\rterrell\Documents\web-projects\Bug-Reporting\ErrorReporting\obj\Debug\ErrorReporting.dll
 C:\Users\rterrell\Documents\web-projects\Bug-Reporting\ErrorReporting\obj\Debug\ErrorReporting.pdb
-C:\Users\rterrell\Documents\web-projects\Bug-Reporting\ErrorReporting\obj\Debug\ErrorReporting.Migrations.AddedReportStatus.resources
-C:\Users\rterrell\Documents\web-projects\Bug-Reporting\ErrorReporting\obj\Debug\ErrorReporting.Migrations.SeedingReportStatus.resources
+C:\Users\rterrell\Documents\web-projects\Bug-Reporting\ErrorReporting\obj\Debug\ErrorReporting.Migrations.AddedStatus.resources
+C:\Users\rterrell\Documents\web-projects\Bug-Reporting\ErrorReporting\obj\Debug\ErrorReporting.Migrations.AddedStatusToReportModel.resources
+C:\Users\rterrell\Documents\web-projects\Bug-Reporting\ErrorReporting\obj\Debug\ErrorReporting.Migrations.SeedingStatuses.resources

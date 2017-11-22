@@ -57,6 +57,11 @@
                     @Html.TextBoxFor(m => m.SubmissionDate, "{0:d MMM YYYY}", new { @class = "form-control", @Value = @DateTime.Now.ToShortDateString() })
                     @Html.ValidationMessageFor(m => m.SubmissionDate)
                 </div>
+                <!--Default fields for form submissions not visible to user-->
+                <div class="form-group">
+                    @Html.TextBoxFor(m => m.StatusId, new { @class = "form-control", @Value = 1, style = "display: none;" })                   
+                </div>
+                
             </div>
         </div>
     </div>

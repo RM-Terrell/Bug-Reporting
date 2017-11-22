@@ -3,7 +3,7 @@ namespace ErrorReporting.Migrations
     using System;
     using System.Data.Entity.Migrations;
     
-    public partial class SeedingReportStatus : DbMigration
+    public partial class SeedingStatuses : DbMigration
     {
         public override void Up()
         {

@@ -226,10 +226,6 @@
     <Compile Include="Migrations\201711132157016_SeedingOperatingSystems.Designer.cs">
       <DependentUpon>201711132157016_SeedingOperatingSystems.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201711132158000_SeedingSampleReport.cs" />
-    <Compile Include="Migrations\201711132158000_SeedingSampleReport.Designer.cs">
-      <DependentUpon>201711132158000_SeedingSampleReport.cs</DependentUpon>
-    </Compile>
     <Compile Include="Migrations\201711132314265_AddedBugReportAnnotations.cs" />
     <Compile Include="Migrations\201711132314265_AddedBugReportAnnotations.Designer.cs">
       <DependentUpon>201711132314265_AddedBugReportAnnotations.cs</DependentUpon>
@@ -242,13 +238,17 @@
     <Compile Include="Migrations\201711150227007_AddedSeverityRange.Designer.cs">
       <DependentUpon>201711150227007_AddedSeverityRange.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201711220129566_AddedReportStatus.cs" />
-    <Compile Include="Migrations\201711220129566_AddedReportStatus.Designer.cs">
-      <DependentUpon>201711220129566_AddedReportStatus.cs</DependentUpon>
+    <Compile Include="Migrations\201711220219375_AddedStatus.cs" />
+    <Compile Include="Migrations\201711220219375_AddedStatus.Designer.cs">
+      <DependentUpon>201711220219375_AddedStatus.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201711220130345_SeedingReportStatus.cs" />
-    <Compile Include="Migrations\201711220130345_SeedingReportStatus.Designer.cs">
-      <DependentUpon>201711220130345_SeedingReportStatus.cs</DependentUpon>
+    <Compile Include="Migrations\201711220221082_AddedStatusToReportModel.cs" />
+    <Compile Include="Migrations\201711220221082_AddedStatusToReportModel.Designer.cs">
+      <DependentUpon>201711220221082_AddedStatusToReportModel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201711220227220_SeedingStatuses.cs" />
+    <Compile Include="Migrations\201711220227220_SeedingStatuses.Designer.cs">
+      <DependentUpon>201711220227220_SeedingStatuses.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -593,9 +593,6 @@
     <EmbeddedResource Include="Migrations\201711132157016_SeedingOperatingSystems.resx">
       <DependentUpon>201711132157016_SeedingOperatingSystems.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201711132158000_SeedingSampleReport.resx">
-      <DependentUpon>201711132158000_SeedingSampleReport.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201711132314265_AddedBugReportAnnotations.resx">
       <DependentUpon>201711132314265_AddedBugReportAnnotations.cs</DependentUpon>
     </EmbeddedResource>
@@ -605,11 +602,14 @@
     <EmbeddedResource Include="Migrations\201711150227007_AddedSeverityRange.resx">
       <DependentUpon>201711150227007_AddedSeverityRange.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201711220129566_AddedReportStatus.resx">
-      <DependentUpon>201711220129566_AddedReportStatus.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201711220219375_AddedStatus.resx">
+      <DependentUpon>201711220219375_AddedStatus.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201711220130345_SeedingReportStatus.resx">
-      <DependentUpon>201711220130345_SeedingReportStatus.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201711220221082_AddedStatusToReportModel.resx">
+      <DependentUpon>201711220221082_AddedStatusToReportModel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201711220227220_SeedingStatuses.resx">
+      <DependentUpon>201711220227220_SeedingStatuses.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
