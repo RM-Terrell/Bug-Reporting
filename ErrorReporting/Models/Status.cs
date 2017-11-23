@@ -7,6 +7,7 @@ namespace ErrorReporting.Models
 {
     public class Status
     {
+        //TODO Set defined range
         public byte Id { get; set; }
         public string StatusName { get; set; }
     }
