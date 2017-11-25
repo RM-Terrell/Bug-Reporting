@@ -15,11 +15,11 @@ namespace ErrorReporting.Models
         [Display(Name ="Submitter Name")]
         public string Name { get; set; }
 
-        [Display(Name="Error Message (if given)")]
+        [Display(Name="Error Message")]
         public string ErrorMessage { get; set; }
 
         [Range(1,5)]
-        [Display(Name = "Severity (See Section 2)")]
+        [Display(Name = "Severity")]
         [Required]
         public int Severity { get; set; }
 
@@ -31,11 +31,11 @@ namespace ErrorReporting.Models
         [Required]
         public byte BrowserId { get; set; }
 
-        [Display(Name = "Description (See Section 1)")]
+        [Display(Name = "Description")]
         [Required]
         public string Description { get; set; }
 
-        [Display(Name = "Reproduction (See Section 3)")]
+        [Display(Name = "Reproduction")]
         [Required]
         public string Reproduction { get; set; }
 

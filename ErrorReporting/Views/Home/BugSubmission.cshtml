@@ -17,23 +17,23 @@
                     @Html.ValidationMessageFor(m => m.Name)
                 </div>   
                 <div class="form-group">
-                    @Html.LabelFor(m => m.ErrorMessage)
+                    @Html.LabelFor(m => m.ErrorMessage) @Html.Label("(if given)")
                     @Html.TextBoxFor(m => m.ErrorMessage, new { @class = "form-control" })
                 </div>
                 <div class="form-group">
-                    @Html.LabelFor(m => m.Description)
+                    @Html.LabelFor(m => m.Description) @Html.Label("(see section 1)")
                     @Html.TextAreaFor(m => m.Description, new { @class = "form-control" })
                     @Html.ValidationMessageFor(m => m.Description)
                 </div>
                 <div class="form-group">
-                    @Html.LabelFor(m => m.Reproduction)
+                    @Html.LabelFor(m => m.Reproduction) @Html.Label("(see section 3)")
                     @Html.TextAreaFor(m => m.Reproduction, new { @class = "form-control" })
                     @Html.ValidationMessageFor(m => m.Reproduction)
                 </div>
             </div>
             <div class="col-lg-6">
                 <div class="form-group">
-                    @Html.LabelFor(m => m.Severity)
+                    @Html.LabelFor(m => m.Severity) @Html.Label("(see section 2)")
                     @Html.TextBoxFor(m => m.Severity, new { @class = "form-control", @Value = 5 })
                     @Html.ValidationMessageFor(m => m.Severity)
                 </div>

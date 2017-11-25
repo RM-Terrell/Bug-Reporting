@@ -13,23 +13,23 @@
     @Model.Name
     </p>
     <p>
-    @Html.Label("Severity: ") <!--TODO Get rid of magic strings-->
+    @Html.LabelFor(m => m.Severity)
     @Model.Severity
     </p>
     <p>
-    @Html.Label("Operating System: ")
+    @Html.LabelFor(m => m.OperatingSystemId)
     @Model.OperatingSystem.OperatingSystemName
     </p>
     <p> 
-    @Html.Label("Browser: ")
+    @Html.LabelFor(m => m.BrowserId)
     @Model.Browser.BrowserName
     </p>
     <p>
-    @Html.Label("Description: ")
+    @Html.LabelFor(m => m.Description)
     @Model.Description
     </p>
     <p>
-    @Html.Label("Reproduction: ")
+    @Html.LabelFor(m => m.Reproduction)
     @Model.Reproduction
     </p>
     <p>
