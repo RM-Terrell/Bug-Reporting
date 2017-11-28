@@ -5,6 +5,8 @@ using System.Web;
 using System.Web.Mvc;
 using System.Data.Entity;
 using ErrorReporting.Models;
+using ErrorReporting.ViewModels;
+
 
 namespace ErrorReporting.Controllers
 {
@@ -35,7 +37,7 @@ namespace ErrorReporting.Controllers
         {
             if (!ModelState.IsValid)
             {
-                return View("BugSubmission", GenerateModel());
+                return View("BugSubmission"); //TODO fix this
             }
             else
             {
@@ -48,24 +50,19 @@ namespace ErrorReporting.Controllers
         
         public ActionResult BugSubmission()
         {
-            ViewBag.Message = "Submission form.";
+            var browsers = _context.Browsers.ToList();
+            var operatingSystems = _context.OperatingSystems.ToList();
 
-            return View(GenerateModel());
+            var viewModel = new NewReportViewModel
+            {
+                Browsers = browsers,
+                OperatingSystems = operatingSystems
+
+            };
+
+            return View(viewModel);
+            
         }
 
-        private BugReport GenerateModel()
-        {
-            var model = new BugReport();
-            var listInitialOS = _context.OperatingSystems.ToList(); //TODO Assigment to get around a typing issue. Find more elegant solution?
-            var listFinalOS = listInitialOS.Select(os => new OperatingSystems { OperatingSystemName = os.OperatingSystemName, Id = os.Id }).ToList();
-
-            var listInitialBrowser = _context.Browsers.ToList(); 
-            var listFinalBrowser = listInitialBrowser.Select(br => new Browsers { BrowserName = br.BrowserName, Id = br.Id }).ToList();
-
-            model.BrowserList = listFinalBrowser;
-            model.OperatingSystemList = listFinalOS;            
-
-            return model;
-        }
     }
 }
