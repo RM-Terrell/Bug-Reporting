@@ -37,7 +37,14 @@ namespace ErrorReporting.Controllers
         {
             if (!ModelState.IsValid)
             {
-                return View("BugSubmission"); //TODO fix this
+                var viewModel = new ReportFormViewModel
+                {
+                    BugReport = bugReport,
+                    Browsers = _context.Browsers.ToList(),
+                    OperatingSystems = _context.OperatingSystems.ToList()
+
+                };
+                return View("BugSubmission", viewModel); //TODO fix this
             }
             else
             {
@@ -53,7 +60,7 @@ namespace ErrorReporting.Controllers
             var browsers = _context.Browsers.ToList();
             var operatingSystems = _context.OperatingSystems.ToList();
 
-            var viewModel = new NewReportViewModel
+            var viewModel = new ReportFormViewModel
             {
                 Browsers = browsers,
                 OperatingSystems = operatingSystems
