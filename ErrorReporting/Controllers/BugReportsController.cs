@@ -4,6 +4,8 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using ErrorReporting.Models;
+using ErrorReporting.ViewModels;
+using System.Data.Entity;
 
 namespace ErrorReporting.Controllers
 {
@@ -29,15 +31,8 @@ namespace ErrorReporting.Controllers
         // GET: BugReports/Details/5
         public ActionResult Details(int id)
         {
-            var report = _context.BugReport.SingleOrDefault(c => c.Id == id);
-
-            var specificReportBrowser = _context.Browsers.SingleOrDefault(c => c.Id == id);
-            report.Browser = specificReportBrowser;
-
-            var specificReportOS = _context.OperatingSystems.SingleOrDefault(c => c.Id == id);
-            report.OperatingSystem = specificReportOS;
-
-
+            var report = _context.BugReport.Include(c => c.Browser).Include(c => c.OperatingSystem).SingleOrDefault(c => c.Id == id);
+            
             if (report == null)
                 return HttpNotFound();
 
