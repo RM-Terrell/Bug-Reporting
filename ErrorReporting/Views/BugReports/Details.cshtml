@@ -5,8 +5,7 @@
 }
 
 <h2>Report Details</h2>
-@using (Html.BeginForm("Edit", "BugReports"))
-{ 
+
 <ul>
     <p>
     @Html.LabelFor(m => m.Name)
@@ -42,7 +41,13 @@
     </p>
 
 </ul>
-<label>Set Report Status</label>
-<button type="submit" class="btn btn-primary">In Progress</button> <!--TODO Wire up buttons to controller-->
+
+@using (Html.BeginForm("InProgress", "BugReports"))
+{
+    <label>Set Report Status</label>
+    <button type="submit" class="btn btn-primary" name="id" value=@Model.Id>In Progress</button>
 
 }
+
+
+

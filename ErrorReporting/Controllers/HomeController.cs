@@ -44,7 +44,7 @@ namespace ErrorReporting.Controllers
                     OperatingSystems = _context.OperatingSystems.ToList()
 
                 };
-                return View("BugSubmission", viewModel); //TODO fix this
+                return View("BugSubmission", viewModel);
             }
             else
             {

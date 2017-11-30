@@ -31,7 +31,9 @@ namespace ErrorReporting.Controllers
         // GET: BugReports/Details/5
         public ActionResult Details(int id)
         {
-            var report = _context.BugReport.Include(c => c.Browser).Include(c => c.OperatingSystem).SingleOrDefault(c => c.Id == id);
+            var report = _context.BugReport.
+                Include(c => c.Browser).
+                Include(c => c.OperatingSystem).SingleOrDefault(c => c.Id == id);
             
             if (report == null)
                 return HttpNotFound();
@@ -40,17 +42,17 @@ namespace ErrorReporting.Controllers
 
         }
 
-        // GET: BugReports/Create
-        public ActionResult Create()
+        public ActionResult InProgress(int id)
         {
-            return View();
-        }
+            var report = _context.BugReport.SingleOrDefault(c => c.Id == id);
+            report.StatusId = 2;
 
-       
-        public ActionResult Edit(int id)
-        {
+            _context.SaveChanges();
 
-            return View();
+            //TODO add toast notifications for status change and stay on details page
+           
+            return RedirectToAction("Index", "BugReports"); 
+
         }
 
     }
