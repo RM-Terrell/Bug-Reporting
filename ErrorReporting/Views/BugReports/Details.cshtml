@@ -39,15 +39,36 @@
     @Html.LabelFor(m => m.SubmissionDate)
     @Model.SubmissionDate
     </p>
+    <p>
+    @Html.LabelFor(m => m.StatusId)
+    @Model.Status.StatusName
+    </p>
 
 </ul>
 
+<label>Set Report Status</label>
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-6">
+
 @using (Html.BeginForm("InProgress", "BugReports"))
 {
-    <label>Set Report Status</label>
     <button type="submit" class="btn btn-primary" name="id" value=@Model.Id>In Progress</button>
 
 }
+            </div>
+
+        <div class="col-md-6">
+@using (Html.BeginForm("Resolved", "BugReports"))
+{
+    
+    <button type="submit" class="btn btn-primary" name="id" value=@Model.Id>Resolved</button>
+
+}
+            </div>
+        </div>
+</div>
 
 
 
