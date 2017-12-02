@@ -64,7 +64,13 @@
             </div>
         </div>
     </div>
-     
+
     <button type="submit" class="btn btn-primary">Submit</button>
+
+    @Html.AntiForgeryToken();
 }
 
+
+@section scripts{
+    @Scripts.Render("~/bundles/jqueryval") 
+    }

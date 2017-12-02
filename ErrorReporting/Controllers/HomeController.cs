@@ -33,6 +33,8 @@ namespace ErrorReporting.Controllers
             return View();
         }
       
+        [HttpPost]
+        [ValidateAntiForgeryToken]
         public ActionResult Save(BugReport bugReport)
         {
             if (!ModelState.IsValid)
