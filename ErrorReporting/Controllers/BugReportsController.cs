@@ -6,6 +6,7 @@ using System.Web.Mvc;
 using ErrorReporting.Models;
 using ErrorReporting.ViewModels;
 using System.Data.Entity;
+using ErrorReporting.Extensions;
 
 namespace ErrorReporting.Controllers
 {
@@ -51,9 +52,9 @@ namespace ErrorReporting.Controllers
 
             _context.SaveChanges();
 
-            //TODO add toast notifications for status change and stay on details page
-           
-            return RedirectToAction("Index", "BugReports"); 
+            this.AddNotification("Status set to 'In Progress.'", NotificationType.INFO);
+
+            return RedirectToAction("Details", "BugReports", new { id = report.Id });
         }
         public ActionResult Resolved(int id)
         {
@@ -62,10 +63,10 @@ namespace ErrorReporting.Controllers
 
             _context.SaveChanges();
 
-            //TODO add toast notifications for status change and stay on details page
+            this.AddNotification("Status set to 'Resolved.'", NotificationType.INFO);
             //TODO find way to combine with "InProgress" action to avoid dupe code
 
-            return RedirectToAction("Index", "BugReports");
+            return RedirectToAction("Details", "BugReports", new { id = report.Id });
         }
 
 
