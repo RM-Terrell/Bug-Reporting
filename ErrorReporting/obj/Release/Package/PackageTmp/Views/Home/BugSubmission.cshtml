@@ -1,4 +1,4 @@
-﻿@model ErrorReporting.Models.BugReport
+﻿@model ErrorReporting.ViewModels.ReportFormViewModel
 @{
     ViewBag.Title = "BugSubmission";
     Layout = "~/Views/Shared/_Layout.cshtml";
@@ -12,55 +12,65 @@
         <div class="row">
             <div class="col-lg-6">
                 <div class="form-group">
-                    @Html.LabelFor(m => m.Name)
-                    @Html.TextBoxFor(m => m.Name, new { @class = "form-control" })
-                    @Html.ValidationMessageFor(m => m.Name)
+                    @Html.LabelFor(m => m.BugReport.Name)
+                    @Html.TextBoxFor(m => m.BugReport.Name, new { @class = "form-control" })
+                    @Html.ValidationMessageFor(m => m.BugReport.Name)
                 </div>   
                 <div class="form-group">
-                    @Html.LabelFor(m => m.ErrorMessage)
-                    @Html.TextBoxFor(m => m.ErrorMessage, new { @class = "form-control" })
+                    @Html.LabelFor(m => m.BugReport.ErrorMessage) @Html.Label("(if given)")
+                    @Html.TextBoxFor(m => m.BugReport.ErrorMessage, new { @class = "form-control" })
                 </div>
                 <div class="form-group">
-                    @Html.LabelFor(m => m.Description)
-                    @Html.TextAreaFor(m => m.Description, new { @class = "form-control" })
-                    @Html.ValidationMessageFor(m => m.Description)
+                    @Html.LabelFor(m => m.BugReport.Description) @Html.Label("(see section 1)")
+                    @Html.TextAreaFor(m => m.BugReport.Description, new { @class = "form-control" })
+                    @Html.ValidationMessageFor(m => m.BugReport.Description)
                 </div>
                 <div class="form-group">
-                    @Html.LabelFor(m => m.Reproduction)
-                    @Html.TextAreaFor(m => m.Reproduction, new { @class = "form-control" })
-                    @Html.ValidationMessageFor(m => m.Reproduction)
+                    @Html.LabelFor(m => m.BugReport.Reproduction) @Html.Label("(see section 3)")
+                    @Html.TextAreaFor(m => m.BugReport.Reproduction, new { @class = "form-control" })
+                    @Html.ValidationMessageFor(m => m.BugReport.Reproduction)
                 </div>
             </div>
             <div class="col-lg-6">
                 <div class="form-group">
-                    @Html.LabelFor(m => m.Severity)
-                    @Html.TextBoxFor(m => m.Severity, new { @class = "form-control", @Value = 5 })
-                    @Html.ValidationMessageFor(m => m.Severity)
+                    @Html.LabelFor(m => m.BugReport.Severity) @Html.Label("(see section 2)")
+                    @Html.TextBoxFor(m => m.BugReport.Severity, new { @class = "form-control", @Value = 5 })
+                    @Html.ValidationMessageFor(m => m.BugReport.Severity)
                 </div>
                 <div class="form-group">
-                    @Html.LabelFor(m => m.OperatingSystemId)
-                    @Html.DropDownListFor(m => m.OperatingSystemId, new SelectList(Model.OperatingSystemList, "Id", "OperatingSystemName"), "Select", new { @class = "form-control" })
-                    @Html.ValidationMessageFor(m => m.OperatingSystemId)
+                    @Html.LabelFor(m => m.BugReport.OperatingSystemId)
+                    @Html.DropDownListFor(m => m.BugReport.OperatingSystemId, new SelectList(Model.OperatingSystems, "Id", "OperatingSystemName"), "Select", new { @class = "form-control" })
+                    @Html.ValidationMessageFor(m => m.BugReport.OperatingSystemId)
                 </div>
                 <div class="form-group">
-                    @Html.LabelFor(m => m.BrowserId)
-                    @Html.DropDownListFor(m => m.BrowserId, new SelectList(Model.BrowserList, "Id", "BrowserName"), "Select", new { @class = "form-control" })
-                    @Html.ValidationMessageFor(m => m.BrowserId)
+                    @Html.LabelFor(m => m.BugReport.BrowserId)
+                    @Html.DropDownListFor(m => m.BugReport.BrowserId, new SelectList(Model.Browsers, "Id", "BrowserName"), "Select", new { @class = "form-control" })
+                    @Html.ValidationMessageFor(m => m.BugReport.BrowserId)
                 </div>
                 <div class="form-group">
-                    @Html.LabelFor(m => m.BugOccurrenceDate)
-                    @Html.TextBoxFor(m => m.BugOccurrenceDate, "{0:d MMM YYYY}", new { @class = "form-control", @Value = @DateTime.Now.ToShortDateString() })
-                    @Html.ValidationMessageFor(m => m.BugOccurrenceDate)
+                    @Html.LabelFor(m => m.BugReport.BugOccurrenceDate)
+                    @Html.TextBoxFor(m => m.BugReport.BugOccurrenceDate, "{0:d MMM YYYY}", new { @class = "form-control", @Value = @DateTime.Now.ToShortDateString() })
+                    @Html.ValidationMessageFor(m => m.BugReport.BugOccurrenceDate)
+                </div>
+                
+                <!--Value control for form submissions fields not visible to user-->
+                <div class="form-group">
+                    @Html.TextBoxFor(m => m.BugReport.StatusId, new { @class = "form-control", @Value = 1, style = "display: none;" })                   
                 </div>
                 <div class="form-group">
-                    @Html.LabelFor(m => m.SubmissionDate)
-                    @Html.TextBoxFor(m => m.SubmissionDate, "{0:d MMM YYYY}", new { @class = "form-control", @Value = @DateTime.Now.ToShortDateString() })
-                    @Html.ValidationMessageFor(m => m.SubmissionDate)
+                    @Html.TextBoxFor(m => m.BugReport.SubmissionDate, "{0:d MMM YYYY}", new { @class = "form-control", @Value = @DateTime.Now.ToShortDateString(), style = "display: none;" })
                 </div>
+                
             </div>
         </div>
     </div>
-     
+
     <button type="submit" class="btn btn-primary">Submit</button>
+
+    @Html.AntiForgeryToken();
 }
 
+
+@section scripts{
+    @Scripts.Render("~/bundles/jqueryval") 
+    }

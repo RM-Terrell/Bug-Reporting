@@ -5,15 +5,103 @@
 }
 
 <h2>Report Details</h2>
-<ul>
-    <li>@Model.Name</li>
-    <li>@Model.Severity</li>
-    <li>@Model.OperatingSystemId</li>
-    <li>@Model.Description</li>
-    <li>@Model.Reproduction</li>
-    <li>@Model.BugOccurrenceDate</li>
-    <li>@Model.SubmissionDate</li>
-    <li>@Model.BrowserId</li>
-    
-</ul>
+@Html.Partial("_Notifications")
+<div class="container">
+    <div class="row">
+        <div class="col-lg-6">
+            <table class="table table-bordered">
+                <tbody>
+                    <tr>
+                        <th class="col-md-3">@Html.LabelFor(m => m.Name)</th>
+                        <td class="col-md-9">@Model.Name</td>
+                    </tr>
+                    <tr>
+                        <th class="col-md-3">@Html.LabelFor(m => m.Severity)</th>
+                        <td class="col-md-9">@Model.Severity</td>
+                    </tr>
+                    <tr>
+                        <th class="col-md-3">@Html.LabelFor(m => m.OperatingSystemId)</th>
+                        <td class="col-md-9">@Model.OperatingSystem.OperatingSystemName</td>
+                    </tr>
+                    <tr>
+                        <th class="col-md-3">@Html.LabelFor(m => m.BrowserId)</th>
+                        <td class="col-md-9">@Model.Browser.BrowserName</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="col-lg-6">
+            <table class="table table-bordered">
+                <tbody>
+                    <tr>
+                        <td class="col-md-3">@Html.LabelFor(m => m.BugOccurrenceDate)</td>
+                        <td class="col-md-9">@Model.BugOccurrenceDate</td>
+
+                    <tr>
+
+                        <td class="col-md-3">@Html.LabelFor(m => m.SubmissionDate)</td>
+                        <td class="col-md-9">@Model.SubmissionDate</td>
+                    </tr>
+                    <tr>
+
+                        <td class="col-md-3">@Html.LabelFor(m => m.StatusId)</td>
+                        <td class="col-md-9">@Model.Status.StatusName</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+<div class="container">
+    <div class="row">
+        <div class="col-lg-6">
+            <table class="table table-bordered">
+                <tbody>
+                    <tr>
+                        <td class="col-md-3">@Html.LabelFor(m => m.Description)</td>
+                        <td class="col-md-9">@Html.DisplayFor(m => m.Description)</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="col-lg-6">
+            <table class="table table-bordered">
+                <tbody>
+                    <tr>
+                        <td class="col-md-3">@Html.LabelFor(m => m.Reproduction)</td>
+                        <td class="col-md-9">@Html.DisplayFor(m => m.Reproduction)</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+<label>Set Report Status</label>
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-6">
+
+            @using (Html.BeginForm("InProgress", "BugReports"))
+            {
+                <button type="submit" class="btn btn-primary" name="id" value=@Model.Id>In Progress</button>
+
+            }
+        </div>
+
+        <div class="col-md-6">
+            @using (Html.BeginForm("Resolved", "BugReports"))
+            {
+
+                <button type="submit" class="btn btn-primary" name="id" value=@Model.Id>Resolved</button>
+
+            }
+        </div>
+    </div>
+</div>
+
+
+
+
 

@@ -1,6 +1,8 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\ErrorReporting\\Views",
+    "\\ErrorReporting\\Views\\BugReports"
   ],
   "SelectedNode": "\\README.md",
   "PreviewInSolutionExplorer": false

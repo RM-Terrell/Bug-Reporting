@@ -64,7 +64,6 @@ namespace ErrorReporting.Controllers
             _context.SaveChanges();
 
             this.AddNotification("Status set to 'Resolved.'", NotificationType.INFO);
-            //TODO find way to combine with "InProgress" action to avoid dupe code
 
             return RedirectToAction("Details", "BugReports", new { id = report.Id });
         }
